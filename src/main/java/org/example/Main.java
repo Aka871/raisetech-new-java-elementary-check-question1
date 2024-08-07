@@ -38,5 +38,35 @@ public class Main {
         scanner.next();
       }
     }
+
+    double result = 0;
+
+    switch (operator) {
+      case '+':
+        result = firstNumber + secondNumber;
+        break;
+      case '-':
+        result = firstNumber - secondNumber;
+        break;
+      case '*':
+        result = firstNumber * secondNumber;
+        break;
+      case '/':
+        if (secondNumber != 0) {
+          result = firstNumber / secondNumber;
+        } else {
+          System.out.println("0で割ることはできません。");
+          scanner.close();
+          return;
+        }
+        break;
+      default:
+        System.out.println("無効な演算子です。");
+        scanner.close();
+        return;
+    }
+
+    System.out.println("計算結果: " + result);
+    scanner.close();
   }
 }
